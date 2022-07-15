@@ -105,6 +105,7 @@ resource "aws_ssm_parameter" "db" {
     admin_user            = aws_rds_cluster.db.master_username
     admin_database_name   = aws_rds_cluster.db.database_name
     admin_writer_endpoint = aws_rds_cluster_instance.db.endpoint
+    admin_writer_port     = aws_rds_cluster_instance.db.port
   })
   tags = var.common_tags
 }
